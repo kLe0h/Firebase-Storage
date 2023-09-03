@@ -4,12 +4,13 @@ using Firebase.Storage;
 using System.Data.SqlClient;
 using System.Data;
 using StorageFirebase.Models;
-
+using Microsoft.CodeAnalysis.Host;
 
 namespace StorageFirebase.Controllers
 {
     public class UsuarioController : Controller
     {
+        //hola
         private readonly string? cadenaSQL;
         public readonly string? firebaseConfig;
         

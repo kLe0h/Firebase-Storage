@@ -23,6 +23,7 @@ namespace StorageFirebase.Controllers
 
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Crear(UsuarioModel oUsuario, IFormFile Imagen)
         {  
@@ -53,6 +54,7 @@ namespace StorageFirebase.Controllers
                 con.Open();
                 var cmd = new SqlCommand("Listar", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+
                 using(var dr  = cmd.ExecuteReader())
                 {
                     while (dr.Read())
@@ -66,7 +68,7 @@ namespace StorageFirebase.Controllers
                     }
                 }
             }
-            return View();
+            return View(oListaUsuarios);
         }
         public async Task<string> SubirStorage(Stream archivo, string nombre)
         {

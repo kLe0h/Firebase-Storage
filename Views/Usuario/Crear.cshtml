@@ -15,11 +15,11 @@
         <form asp-action="Crear" asp-controller="Usuario" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                <input type="test" class="form-control" asp-for="nombre">
+                <input type="test" class="form-control" asp-for="nombre" autocomplete="off">
             </div>
             <div class="mb-3">
                 <label class="form-label">Telefono</label>
-                <input type="text" class="form-control" asp-for="telefono">
+                <input type="text" class="form-control" asp-for="telefono" autocomplete="off">
             </div>
             <div class="mb-3">
                 <input type="file" class="form-control" name="Imagen">

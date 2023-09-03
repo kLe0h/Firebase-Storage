@@ -1,8 +1,37 @@
-﻿
+﻿@model List<UsuarioModel>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="card">
+    <div class="card-header">
+        Crear usuario
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead action="table-dark text-white">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.nombre</th>
+                        <th>@item.telefono</th>
+                        <td>
+                            <img src="@item.url_imagen" width="100" height="100">
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-action="Crear" asp-controller="Usuario" class="btn btn-warning">Crear nuevo empleado</a>
+    </div>
+</div>
 
